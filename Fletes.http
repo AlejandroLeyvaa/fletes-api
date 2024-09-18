@@ -1,0 +1,6 @@
+@Fletes_HostAddress = http://localhost:5021
+
+GET {{Fletes_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
