@@ -1,10 +1,12 @@
 ﻿using Fletes.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Route = Fletes.Models.Route;
 
 namespace Fletes.Context
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<IdentityUser>
     {
 
         public AppDbContext(DbContextOptions<AppDbContext> options)
@@ -21,6 +23,7 @@ namespace Fletes.Context
         public DbSet<Freight> Freights { get; set; }
         public DbSet<FreightProduct> FreightProducts { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
+        public DbSet<User> Users { get; set; }
 
         // Configuring the entity relationships
         protected override void OnModelCreating(ModelBuilder modelBuilder)

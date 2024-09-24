@@ -5,9 +5,11 @@ using Fletes.Context;
 using Fletes.Models.DTOs;
 using AutoMapper;
 using Fletes.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Fletes.Controllers
 {
+    [Authorize(Roles = "Admin")] // Only Admins can access this endpoint
     [ApiController]
     [Route("api/[controller]")]
     public class FreightController : ControllerBase
